@@ -15,15 +15,18 @@
         <input type="button" value="Add" id="btn" />
       </div>
     </main>
-    <div class="greeting-user">Waiting...</div>
+    <div class="greeting-user"></div>
 
     <script>
       let btn = document.getElementById("btn");
       let input = document.querySelector("#input");
       let output = document.querySelector(".greeting-user");
 
+      if (output.innerHTML === "") output.style.opacity = 0;
+
       btn.onclick = function () {
         if (input.value != "") {
+          output.style.opacity = 1;
           output.innerHTML = "Hello " + input.value;
           input.value = "";
         }
